@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Dosis:300,800");
+        [data-filter*=image-] {
+            flex: 0 1 20%;
+            line-height: 0;
+            position: relative;
+            z-index: 0;
+        }
+        [data-filter*=image-] img {
+            height: auto;
+            width: 100%;
+        }
+
+        [data-filter="image-grayscale"] img {
+            filter: grayscale(50%);
+        }
+
+        [data-filter="image-saturate"] img {
+            filter: saturate(360%);
+        }
+
+        [data-filter="image-sepia"] img {
+            filter: sepia(100%);
+        }
+
+        [data-filter="image-invert"] img {
+            filter: invert(100%);
+        }
+
+        [data-filter="image-opacity"] img {
+            filter: opacity(50%);
+        }
+
+        [data-filter="image-brightness"] img {
+            filter: brightness(120%);
+        }
+
+        [data-filter="image-contrast"] img {
+            filter: contrast(160%);
+        }
+
+        [data-filter="image-hue-rotate"] img {
+            filter: hue-rotate(160deg);
+        }
+
+        [data-filter="image-blur"] img {
+            filter: blur(2px);
+        }
+
+        body {
+            background: #163065;
+            color: #fff;
+            font-family: 'Dosis', sans-serif;
+            line-height: 1;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            line-height: 1;
+            margin: 2rem 0 3rem;
+            padding: 0;
+            text-align: center;
+            width: 100vw;
+        }
+        h1 span {
+            color: #f8be00;
+            font-size: 5rem;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        h2 {
+            background: rgba(100, 0, 50, 0.8);
+            color: #fff;
+            display: block;
+            font-size: 1.25rem;
+            font-weight: 300;
+            left: 0;
+            line-height: 1.5;
+            margin: 0;
+            padding: .5rem;
+            position: absolute;
+            top: 0;
+            z-index: 1;
+        }
+
+        a {
+            color: #fff;
+            display: inline-block;
+            font-size: 1rem;
+        }
+        a:hover {
+            color: #f8be00;
+        }
+
+    </style>
+</head>
+<body>
+<h1>CSS <span>Filters</span>
+    <a href="http://caniuse.com/#feat=css-filter">Check Can I Use</a></h1>
+
+<main>
+    <div data-filter="image-grayscale">
+        <h2>grayscale</h2>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/150150/1663070_648364238572800_1417459555_n.jpg">
+    </div>
+    <div data-filter="image-saturate">
+        <h2>saturate</h2>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/150150/1663070_648364238572800_1417459555_n.jpg">
+    </div>
+    <div data-filter="image-sepia">
+        <h2>sepia</h2>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/150150/1663070_648364238572800_1417459555_n.jpg">
+    </div>
+    <div data-filter="image-invert">
+        <h2>invert</h2>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/150150/1663070_648364238572800_1417459555_n.jpg">
+    </div>
+    <div data-filter="image-opacity">
+        <h2>opacity</h2>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/150150/1663070_648364238572800_1417459555_n.jpg">
+    </div>
+    <div data-filter="image-brightness">
+        <h2>brightness</h2>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/150150/1663070_648364238572800_1417459555_n.jpg">
+    </div>
+    <div data-filter="image-contrast">
+        <h2>contrast</h2>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/150150/1663070_648364238572800_1417459555_n.jpg">
+    </div>
+    <div data-filter="image-hue-rotate">
+        <h2>hue-rotate</h2>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/150150/1663070_648364238572800_1417459555_n.jpg">
+    </div>
+    <div data-filter="image-blur">
+        <h2>blur</h2>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/150150/1663070_648364238572800_1417459555_n.jpg">
+    </div>
+    <div data-filter="image-normal">
+        <h2>normal</h2>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/150150/1663070_648364238572800_1417459555_n.jpg">
+    </div>
+</main>
+</body>
+</html>
