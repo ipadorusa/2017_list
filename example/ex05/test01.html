@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>body 3 second</title>
+    <style>
+        .c0 {color:red;}
+        .c1 {color:blue;}
+        .c2 {color:green;}
+        .c3 {color:cyan;}
+
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li>사랑해</li>
+        <li>고마워</li>
+        <li>고마워</li>
+        <li>감사해6</li>
+        <li>감사해7</li>
+        <li>감사해1</li>
+        <li>감사해2</li>
+        <li>감사해</li>
+        <li>좋아해3</li>
+        <li>좋아해5</li>
+        <li>좋아해</li>
+        <li>좋아해1</li>
+        <li>사랑해</li>
+        <li>고마워</li>
+        <li>사랑해</li>
+    </ul>
+    <script type="text/javascript">
+        var arr = new Array();
+        var list = document.getElementById('list'),
+                li = list.getElementsByTagName('li');
+        for(var i=0;i < li.length;i++) {
+            arr.push(li[i].childNodes[0].nodeValue)
+        }
+        var k;
+        for(var j=0;j < li.length;j++) {
+            var n = arr.indexOf(li[i]);
+            console.log(n);
+            if(n>0) {
+
+                li[j].className = 'c'+ k;
+                li[n].className = 'c'+ k;
+                k++;
+
+            }
+        }
+
+
+
+        function duplicateRemove(){
+
+        }
+        duplicateRemove();
+        /*
+        function randomColor(){
+            var _body = document.body;
+            var randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+            _body.style.backgroundColor = randomColor;
+        }
+        setInterval(function(){
+            randomColor();
+        },3000);
+        */
+
+
+    </script>
+</body>
+</html>
