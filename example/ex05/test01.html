@@ -30,31 +30,59 @@
         <li>사랑해</li>
     </ul>
     <script type="text/javascript">
-        var arr = new Array();
-        var list = document.getElementById('list'),
-                li = list.getElementsByTagName('li');
-        for(var i=0;i < li.length;i++) {
-            arr.push(li[i].childNodes[0].nodeValue)
+        /*
+        var ary1 = [],
+                _ul = document.getElementById("list"),
+                _li = _ul.getElementsByTagName("li");
+
+        for (var i=0; i<_li.length; i++) {
+            ary1.push(_li[i].innerHTML);
         }
-        var k;
-        for(var j=0;j < li.length;j++) {
-            var n = arr.indexOf(li[i]);
-            console.log(n);
-            if(n>0) {
 
-                li[j].className = 'c'+ k;
-                li[n].className = 'c'+ k;
-                k++;
+        console.log(deduplication(ary1));
 
+        function deduplication(ary) {
+            var temp = [];
+            for (var i=0; i<ary.length; i++) {
+                var stat= true;
+                for (var n=0; n<temp.length; n++) {
+                    if (ary[i] == temp[n] ) {
+                        stat = false;
+                    }
+                }
+                if (stat) {
+                    temp.push(ary[i]);
+                }
+            }
+            return temp;
+
+        }
+
+
+        function setList(ary) {
+            var len = _li.length,
+                    range = document.createRange();
+
+            range.setStart(_ul,0);
+            range.setEnd(_ul,_ul.childNodes.length);
+
+            for (var i=0; i<len; i++) {
+                _ul.removeChild(_li[0]);
+            }
+            for (var n=ary.length-1; n>0; n--) {
+                var _node = document.createElement('li');
+                _node.appendChild(document.createTextNode(ary[n]));
+                range.insertNode(_node);
             }
         }
 
+        */
 
 
-        function duplicateRemove(){
 
-        }
-        duplicateRemove();
+
+
+
         /*
         function randomColor(){
             var _body = document.body;
