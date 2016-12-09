@@ -42,4 +42,4 @@
 		업데이트				git pull/git fetch		svn update
 		원격 저장소에 반영	git push				svn commit
 - git_command_line
-![Alt text](ipadorusa/2017_list/img_command_line.jpg)
+![Alt text](https://github.com/ipadorusa/2017_list/img_command_line.jpg)
