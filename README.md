@@ -33,11 +33,11 @@
 
 		기능           			Git 			        Svn
 		저장소의복제    		git clone   			svn checkout
-		커밋           			git commit  			svn commit
+		커밋           		git commit  			svn commit
 		상태확인				git status  			svn status
-		변경 취소				git checkout/reset 		svn revert
-		브랜치 생성				git branch				svn copy
-		브랜치 전환				git checkout			svn switch
+		변경 취소			git checkout/reset 		svn revert
+		브랜치 생성			git branch				svn copy
+		브랜치 전환			git checkout			svn switch
 		병함					git merge				svn merge
 		업데이트				git pull/git fetch		svn update
-		원격 저장소에 반영		git push				svn commit
+		원격 저장소에 반영	git push				svn commit
