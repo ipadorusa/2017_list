@@ -41,3 +41,4 @@
 		병함					git merge				svn merge
 		업데이트				git pull/git fetch		svn update
 		원격 저장소에 반영	git push				svn commit
+- git_command_line
