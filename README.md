@@ -29,11 +29,11 @@
 	    - Git 저장소를 직접 설치하지 않고 Github를 통해 사용 가능
     - Git 의 활용 예~ 실예
 
-- 명령어 비교 [![Build Status]
+- 명령어 비교
 
 		기능           			Git 			        Svn
 		저장소의복제    		git clone   			svn checkout
-		커밋           		git commit  			svn commit
+		커밋           		    git commit  			svn commit
 		상태확인				git status  			svn status
 		변경 취소			git checkout/reset 		svn revert
 		브랜치 생성			git branch				svn copy
