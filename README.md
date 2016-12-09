@@ -20,7 +20,7 @@
 ## **Git 공부하기**
 - 모르는 용어
 	- fork
-	    - 다른 사람 저장소를 가져와 제 저장소로 만들어 놓는 기능
+	    - 다른 사람 저장소를 가져와 저장소로 만들어 놓는 기능
 	- fetch
 	- smart commit
 	- rebase
@@ -28,3 +28,16 @@
 	- git vs github 의 차이
 	    - Git 저장소를 직접 설치하지 않고 Github를 통해 사용 가능
     - Git 의 활용 예~ 실예
+
+- 명령어 비교 [![Build Status]
+
+		기능           			Git 			        Svn
+		저장소의복제    		git clone   			svn checkout
+		커밋           			git commit  			svn commit
+		상태확인				git status  			svn status
+		변경 취소				git checkout/reset 		svn revert
+		브랜치 생성				git branch				svn copy
+		브랜치 전환				git checkout			svn switch
+		병함					git merge				svn merge
+		업데이트				git pull/git fetch		svn update
+		원격 저장소에 반영		git push				svn commit
