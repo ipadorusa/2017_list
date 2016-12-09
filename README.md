@@ -20,9 +20,11 @@
 ## **Git 공부하기**
 - 모르는 용어
 	- fork
+	    - 다른 사람 저장소를 가져와 제 저장소로 만들어 놓는 기능
 	- fetch
 	- smart commit
 	- rebase
 	- github flow
 	- git vs github 의 차이
-
+	    - Git 저장소를 직접 설치하지 않고 Github를 통해 사용 가능
+    - Git 의 활용 예~ 실예
