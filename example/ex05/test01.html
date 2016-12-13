@@ -39,7 +39,11 @@
             ary1.push(_li[i].innerHTML);
         }
 
-        console.log(ary1);
+        var aaa = ary1.filter(function (value,index,array) {
+            return array.indexOf(value) == index;
+        });
+        console.log(aaa.length);
+
         /*
         function deduplication(ary) {
             var temp = [];

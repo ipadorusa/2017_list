@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>body 3 second</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        * {margin:0;padding:0;}
+        ul,ol,li {margin:0;padding:0;}
+    </style>
+</head>
+<body>
+    <ol id="list">
+        <li style="height: 20px;">1</li>
+        <li style="height: 20px;">2</li>
+        <li style="height: 50px;">4</li>
+        <li style="height: 70px;">5</li>
+        <li style="height: 18px;">1</li>
+        <li style="height: 20px;">6</li>
+        <li style="height: 30px;">7</li>
+        <li style="height: 40px;">8</li>
+    </ol>
+    <script type="text/javascript">
+        var obj_ul = document.getElementById("list"),
+            obj_li = obj_ul.getElementsByTagName("li");
+        var arry_li = [];
+
+        for(var i=0;i<obj_li.length;i++){
+            arry_li.push(obj_li[i].offsetHeight);
+        }
+        console.log(arry_li);
+
+    </script>
+</body>
+</html>

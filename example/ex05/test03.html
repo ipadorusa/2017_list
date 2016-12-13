@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>body 3 second</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        * {margin:0;padding:0;}
+        ul,ol,li {margin:0;padding:0;}
+        li:hover{background-color:yellow;}
+        li.on{font-size: 3em;}
+    </style>
+</head>
+<body>
+
+    <h3>아이템을 클릭하면 1.3배 크기로</h3>
+    <hr>
+    <p>여름 방학 때 하고 싶은 것들</p>
+    <ul>
+        <li>자전거로 대한민국 일주</li>
+        <li>책 100권 읽기</li>
+        <li>철인 3종 경기 준비</li>
+        <li>자바스크립트 정복</li>
+    </ul>
+
+    <script type="text/javascript">
+        var li = document.querySelectorAll('li');
+        var target;
+
+        for(var i=0; i<li.length; i++){
+            var item = li[i];
+            item.addEventListener('click', function(){
+                if(target){
+                    target.classList.remove('on');
+                }
+                target = this;
+                target.classList.add('on');
+            });
+        }
+    </script>
+
+</body>
+</html>
