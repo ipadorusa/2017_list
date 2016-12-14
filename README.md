@@ -45,4 +45,5 @@
 ![Alt text](https://github.com/ipadorusa/2017_list/blob/master/img/git/git_command_line.jpg?raw=true)
 ![Alt text](https://github.com/ipadorusa/2017_list/blob/master/img/git/git_command_01.jpg?raw=true)
 
-branch test
+## 퍼블리셔 지원요건 중 용어 (사이트개편하다가 궁금해서 찾아봄)
+- Grunt,Gulp ,babel,react.js, angular.js
