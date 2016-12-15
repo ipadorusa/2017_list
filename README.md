@@ -47,6 +47,27 @@
 
 ## 퍼블리셔 지원요건 중 용어 (사이트개편하다가 궁금해서 찾아봄)
 - Grunt,Gulp ,babel,react.js, angular.js
+- 소스 코드 공동 작업 도구 (예: GitHub, GitLab, Bitbucket)
+- 이슈 트래커 (예: JIRA, YouTrack)
+- 코드 검토 도구 (예: Crucible, Upsource)
+- 연속 통합(CI) 도구 (예: Travis, Jenkins)
+- 정적 분석 도구 (예: CodeClimate)
+- 통합 개발 환경(IDE) (예: Eclipse, IntelliJ IDEA)
+- 경량 데스크톱 편집기 (예: Sublime Text, Atom, VS Code, Vim)
+- 클라우드 기반 편집기 또는 IDE
+
+## 모듈로더
+- Browserify
+- Webpack
+- RequireJS
+- SystemJS
+- Rollup
+
+## agile software development
+- Scrum
+- Kanban
+- XP
+- Combined
 
 
 1. ES6의 제너레이터를 사용한 비동기 프로그래밍
