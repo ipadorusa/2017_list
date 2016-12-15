@@ -70,6 +70,17 @@
 - Combined
 
 
+## CR LF CRLF
+
+Carriage Return
+- CR = \r
+Line Feed
+- LF = \N
+Carriage Return and Line Feed
+- CRLF = \R\N
+
+
+
 1. ES6의 제너레이터를 사용한 비동기 프로그래밍
 http://meetup.toast.com/posts/73
 ---
