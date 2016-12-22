@@ -42,10 +42,12 @@
     </div>
     <script>
         function scrollSpy(){
-            var sectionArea = $(".section");
-            var heightSection = [];
-            for (var i=0;i < sectionArea.length;i++){
-                heightSection.push(sectionArea.outerHeight());
+            var $sectionArea = $(".section"),
+                sectionMax = $sectionArea.legnth,
+                heightSection = [];
+
+            for (var i=0;i < sectionMax;i++){
+                heightSection.push($sectionArea.outerHeight());
                 console.log(heightSection);
             }
         }
