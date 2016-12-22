@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../../lib/jquery/jquery.js"></script>
+    <style>
+        * {margin:0;padding:0;}
+        ul,ol,li {list-style:none;}
+        nav {width:100%;height:50px;overflow:hidden;}
+        nav li {float:left;width:25%;height:50px;background:#fff;text-align:center;line-height:50px;}
+        nav li a {width:100%;text-decoration: none;color:#000;display:inline-block;}
+        nav li.on {color:red;}
+        .section {width:100%;height:500px;}
+        #section01 {background:red;}
+        #section02 {background:black;}
+        #section03 {background:blue;}
+        #section04 {background:violet;}
+    </style>
+</head>
+<body>
+    <div id="warp">
+        <section class="header">
+            <nav id="navi">
+                <li><a href="test06.html#section01" class="movelink">section 01</a></li>
+                <li><a href="test06.html#section02" class="movelink">section 02</a></li>
+                <li><a href="test06.html#section03" class="movelink">section 03</a></li>
+                <li><a href="test06.html#section04" class="movelink">section 04</a></li>
+            </nav>
+        </section>
+        <section class="container">
+            <div class="section" id="section01">
+                <input type="checkbox" id="ch_01"><label for="ch_01">1</label>
+                <input type="checkbox" id="ch_02"><label for="ch_02">2</label>
+                <input type="checkbox" id="ch_03"><label for="ch_03">3</label>
+            </div>
+            <div class="section" id="section02"></div>
+            <div class="section" id="section03"></div>
+            <div class="section" id="section04"></div>
+        </section>
+    </div>
+</body>
+</html>
