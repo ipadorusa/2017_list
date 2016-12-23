@@ -41,17 +41,22 @@
         </section>
     </div>
     <script>
+        (function(){
+
+        }());
         function scrollSpy(){
             var $sectionArea = $(".section"),
-                sectionMax = $sectionArea.legnth,
+                sectionMax = $sectionArea.length,
                 heightSection = [];
 
             for (var i=0;i < sectionMax;i++){
-                heightSection.push($sectionArea.outerHeight());
-                console.log(heightSection);
+                heightSection[i] = {
+                    "width" : $sectionArea.outerWidth(),
+                    "height" : $sectionArea.outerHeight()
+                };
             }
         }
-        scrollSpy();
+
 
     </script>
 </body>
