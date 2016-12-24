@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6a8129d-33af-4b04-8000-d7783e5e9b74" name="Default" comment="^^d">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/2017_rnd.iml" afterPath="$PROJECT_DIR$/.idea/2017_rnd.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/ex05/test06.html" afterPath="$PROJECT_DIR$/example/ex05/test06.html" />
     </list>
     <ignored path="2017_rnd.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -298,7 +295,7 @@
       <workItem from="1482475758870" duration="457000" />
       <workItem from="1482476222061" duration="1065000" />
       <workItem from="1482543579723" duration="462000" />
-      <workItem from="1482621857830" duration="336000" />
+      <workItem from="1482621857830" duration="416000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1480403090187</created>
@@ -563,7 +560,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95278000" />
+    <option name="totallyTimeSpent" value="95358000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1436" height="877" extended-state="6" />
