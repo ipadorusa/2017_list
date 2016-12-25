@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="d6a8129d-33af-4b04-8000-d7783e5e9b74" name="Default" comment="^^d">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
+=======
+    <list default="true" id="d6a8129d-33af-4b04-8000-d7783e5e9b74" name="Default" comment="" />
+>>>>>>> Stashed changes
     <ignored path="2017_rnd.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -295,7 +299,11 @@
       <workItem from="1482475758870" duration="457000" />
       <workItem from="1482476222061" duration="1065000" />
       <workItem from="1482543579723" duration="462000" />
+<<<<<<< Updated upstream
       <workItem from="1482621857830" duration="416000" />
+=======
+      <workItem from="1482621857830" duration="703000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1480403090187</created>
@@ -556,11 +564,42 @@
       <option name="project" value="LOCAL" />
       <updated>1482468515965</updated>
     </task>
+<<<<<<< Updated upstream
     <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="95358000" />
+=======
+    <task id="LOCAL-00038" summary="^^d">
+      <created>1482623952708</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1482623952708</updated>
+    </task>
+    <task id="LOCAL-00039" summary="^^d">
+      <created>1482624159816</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1482624159816</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="95645000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+>>>>>>> Stashed changes
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1436" height="877" extended-state="6" />
