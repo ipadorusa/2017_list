@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<div id="wrap">
+    <select name="" id="result_select">
+        <option value="y">Y</option>
+        <option value="n">N</option>
+    </select>
+    <button type="button" id="searchButton">조회</button>
+    <div id="list_layout">
+
+    </div>
+</div>
+<script src="../../lib/jquery/jquery.min.js"></script>
+<script>
+    $(function(){
+        $("#result_select").on("change",function(){
+            var flag = $('#result_select').val();
+            if(flag == "y"){
+                var url = "list1.json"
+            }else{
+                var url = "list2.json"
+            }
+            $.ajax({
+                url : url,
+                dataType : "json",
+                success : function (data) {
+                    if(data.flag == "y"){
+                        var result = data.data;
+                    }else{
+                        var result = data.data;
+                    }
+                    $('#list_layout').html(data.data);
+                }
+            })
+        });
+
+
+    });
+</script>
+
+</body>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+</html>
