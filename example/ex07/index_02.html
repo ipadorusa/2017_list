@@ -26,11 +26,12 @@
                 dataType : "json",
                 success : function (data) {
                     if(data.flag == "y"){
-                        var result = data.data;
+                        result = data.data;
                     }else{
-                        var result = data.data;
+                        result = data.data;
                     }
-                    $('#list_layout').html(data.data);
+                    console.log(data.flag);
+                    $('#list_layout').html(result);
                 }
             })
         });
