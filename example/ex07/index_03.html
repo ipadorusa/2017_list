@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<div id="wrap">
+    div.
+</div>
+<script src="../../lib/jquery/jquery.min.js"></script>
+<script>
+    $(function(){
+        $("#result_select").on("change",function(){
+            var flag = $('#result_select').val();
+            if(flag == "y"){
+                var url = "list1.json"
+            }else{
+                var url = "list2.json"
+            }
+            $.ajax({
+                url : url,
+                dataType : "json",
+                success : function (data) {
+                    if(data.flag == "y"){
+                        result = data.data;
+                    }else{
+                        result = data.data;
+                    }
+                    console.log(data.flag);
+                    $('#list_layout').html(result);
+                }
+            })
+        });
+
+
+    });
+</script>
+
+</body>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+</html>
