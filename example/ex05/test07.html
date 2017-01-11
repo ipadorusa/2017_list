@@ -29,7 +29,7 @@
                 <li><a href="test06.html#section04" class="movelink">section 04</a></li>
             </nav>
         </section>
-        <section class="container">
+        <section id="container">
             <div class="section" id="section01">
                 <input type="checkbox" id="ch_01"><label for="ch_01">1</label>
                 <input type="checkbox" id="ch_02"><label for="ch_02">2</label>
@@ -40,5 +40,17 @@
             <div class="section" id="section04"></div>
         </section>
     </div>
+    <script>
+        var li = $("#navi li");
+        var item = li.find("a");
+        scrollItems = item.map(function(){
+            var item = $($(this).attr("href"));
+            if (item.length) {
+                return item;
+            }
+
+        });
+
+    </script>
 </body>
 </html>

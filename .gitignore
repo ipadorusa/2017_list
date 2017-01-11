@@ -46,3 +46,4 @@ fabric.properties
 .gitignore
 .idea/codeStyleSettings.xml
 .idea/encodings.xml
+/.idea/workspace.xml
