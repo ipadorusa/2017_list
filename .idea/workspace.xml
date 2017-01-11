@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6a8129d-33af-4b04-8000-d7783e5e9b74" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/ex05/test08.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/2017_rnd.iml" afterPath="$PROJECT_DIR$/.idea/2017_rnd.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/ex05/test06.html" afterPath="$PROJECT_DIR$/example/ex05/test06.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/ex05/test07.html" afterPath="$PROJECT_DIR$/example/ex05/test07.html" />
     </list>
     <ignored path="2017_rnd.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -319,7 +314,7 @@
       <workItem from="1482476222061" duration="1065000" />
       <workItem from="1482543579723" duration="462000" />
       <workItem from="1482621857830" duration="630000" />
-      <workItem from="1484101941822" duration="663000" />
+      <workItem from="1484101941822" duration="680000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1480403090187</created>
@@ -587,11 +582,18 @@
       <option name="project" value="LOCAL" />
       <updated>1482623952708</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="^^d">
+      <created>1484107553070</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1484107553070</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96235000" />
+    <option name="totallyTimeSpent" value="96252000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -851,6 +853,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="397">
           <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
