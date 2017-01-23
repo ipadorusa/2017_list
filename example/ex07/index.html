@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="wrap">
+        <h1>회의록 json</h1>
+
+        <div id="container">
+            <h3>날짜 : </h3>
+            <div class="conference_member">
+                <dl>
+                    <dt>장소</dt>
+                    <dd></dd>
+                </dl>
+                <dl>
+                    <dt>참여인원</dt>
+                    <dd></dd>
+                </dl>
+            </div>
+            <div class="conference_context">
+                <table>
+                    <colgroup>
+                        <col width="10%">
+                        <col width="*">
+                        <col width="20%">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>구분</th>
+                        <th>내용</th>
+                        <th>비고</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1팀</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2팀</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3팀</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script>
+        function conference(_checkreult){
+            $.ajax({
+                url : 'conference.json',
+                dataType :'json',
+                success : function (data) {
+
+                },
+                error: function(xhr, status, error) {
+                    alert("실패");
+                }
+            })
+        }
+        conference();
+    </script>
+
+</body>
+</html>

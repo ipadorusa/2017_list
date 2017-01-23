@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="몬스터슈퍼리그 도감 검색기 입니다.">
+    <meta property="og:title" content="몬슈리 도감 검색기">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>몬슈리 도감 검색기</title>
+
+    <!-- 부트스트랩 -->
+    <link href="bootstrap.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="site-wrapper">
+
+    <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+            <div class="inner cover">
+                <h1 class="cover-heading"><a href="./">몬슈리 도감 검색기</a></h1>
+
+                <div class="search">
+                    <select id="search_type">
+                        <option value="전체">전체</option>
+                        <option value="속성">속성</option>
+                        <option value="태생">태생</option>
+                        <option value="이름">이름</option>
+                        <option value="타입">타입</option>
+                        <option value="리더스킬">리더스킬</option>
+                        <option value="3성스킬">3성스킬</option>
+                        <option value="5성스킬">5성스킬</option>
+                    </select>
+                    <input type="text" id="search_skill" placeholder="검색어를 입력하세요"/><button onclick="go_search(); return false;">검색</button><br/>
+                </div>
+                <div class="print"></div>
+            </div>
+
+            <div class="mastfoot">
+                <div class="inner">
+                    <p><a href="javascript:;" onclick="go_search('not_3el'); return false;">3속성이 없는 스타몬</a></p>
+                    <p>WAGI의 몬스터슈퍼리그 도감 검색기 입니다. (ver 1.0.0)</p>
+                    <p>e-mail : waguwagi@naver.com</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="layer_popup"></div>
+
+    </div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="http://wagi.co.kr/monsulea/js/skill.js"></script>
+<script src="http://wagi.co.kr/monsulea/js/starmon.js"></script>
+<script src="http://wagi.co.kr/monsulea/js/monsulea.js"></script>
+<script>
+    //enter시 검색
+    $("#search_skill").on("keyup",function(e){
+        var code = e.keyCode || e.which;
+        if(code == 13) {
+            go_search();
+        }
+    });
+    function open_layer(key, value, option){
+        value = encodeURIComponent(value);
+        $('#layer_popup').html('<div class="modal fade"><div class="modal-dialog"><div class="modal-content"></div></div></div>');
+        $('div.modal').modal({
+            remote : 'layer.php?'+key+'='+value+"&option="+option,
+        });
+    }
+    function close_layer(){
+        $('#layer_popup').html("");
+        $("body").css("padding-right","0px");
+        $("body").removeClass("modal-open");
+    }
+    function go_search(type){
+        var searchText = $("#search_skill").val();
+        var searchType = $("#search_type").val();
+        //공백검색시
+        if(!searchText && !type) {
+            $(".print").hide();
+            return;
+        }
+        //검색
+        var mon_list = search_starmon(searchText, searchType);
+        if(type == "not_3el"){
+            $("#search_skill").val("");
+            mon_list = get_not_3el();
+        }
+        var mon_count = get_count(mon_list);
+        var html="";
+        if(mon_list.length > 0){
+
+            var html=html+"<p style='text-align:right; width='100%''><span class='fire'>불("+mon_count.속성.불+")</span> <span class='water'>물("+mon_count.속성.물+")</span> <span class='wood'>나무("+mon_count.속성.나무+")</span> <span class='light'>빛("+mon_count.속성.빛+")</span> <span class='dark'>어둠("+mon_count.속성.어둠+")</span>&nbsp;&nbsp;&nbsp;&nbsp;총 "+mon_list.length+"개</p>";
+            var html=html+"<table>";
+            var html=html+"  <colgroup>";
+            var html=html+"    <col style='width:30px;'/>";
+            var html=html+"    <col style='width:30px;'/>";
+            var html=html+"    <col style='width:140px;'/>";
+            var html=html+"    <col style='width:60px;'/>";
+            var html=html+"    <col style='width:75px;'/>";
+            var html=html+"    <col style='width:75px;'/>";
+            var html=html+"    <col style='width:75px;'/>";
+            var html=html+"  </colgroup>";
+            var html=html+"  <tr>";
+            var html=html+"    <th>속성</th>";
+            var html=html+"    <th>태생</th>";
+            var html=html+"    <th>이름(1진화)</th>";
+            var html=html+"    <th>타입</th>";
+            var html=html+"    <th>리더스킬</th>";
+            var html=html+"    <th>3성스킬</th>";
+            var html=html+"    <th>5성스킬</th>";
+            var html=html+"  </tr>";
+
+            for(var i=0; i<mon_list.length; i++){
+                var html=html+"  <tr>";
+                var html=html+"    <td><span class='"+get_css_element(mon_list[i].속성)+"'>"+mon_list[i].속성+"</span></td>";
+                var html=html+"    <td><span class='"+get_css_element(mon_list[i].속성)+"'>"+mon_list[i].태생+"</span></td>";
+                var html=html+"    <td><a href=\"javascript:;\" onclick=\"open_layer('name','"+mon_list[i].진화1+"','"+mon_list[i].속성+"')\"><span class='"+get_css_element(mon_list[i].속성)+"'>"+mon_list[i].진화1+"</span></a></td>";
+                var html=html+"    <td><span class='"+get_css_element(mon_list[i].속성)+"'>"+mon_list[i].타입+"</span></td>";
+                var html=html+"    <td><a href=\"javascript:;\" onclick=\"open_layer('lsk','"+mon_list[i].리더스킬+"')\"><span class='"+get_css_element(mon_list[i].속성)+"'>"+mon_list[i].리더스킬.split("_")[0]+"</span></a></td>";
+                var html=html+"    <td><a href=\"javascript:;\" onclick=\"open_layer('sk3','"+mon_list[i].스킬3성+"')\"><span class='"+get_css_element(mon_list[i].속성)+"'>"+mon_list[i].스킬3성.split("_")[0]+"</span></a></td>";
+                var html=html+"    <td><a href=\"javascript:;\" onclick=\"open_layer('sk5','"+mon_list[i].스킬5성+"')\"><span class='"+get_css_element(mon_list[i].속성)+"'>"+mon_list[i].스킬5성.split("_")[0]+"</span></a></td>";
+                var html=html+"  </tr>";
+            }
+            var html=html+"</table>";
+            $(".print").html(html);
+            $(".print").show();
+        }else{
+            $(".print").hide();
+        }
+    }
+</script>
+</body>
+</html>

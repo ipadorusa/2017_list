@@ -8,20 +8,30 @@
     <style>
         * {margin:0;padding:0;}
         ul,ol,li {list-style:none;}
-        nav {width:100%;height:50px;overflow:hidden;}
-        nav li {float:left;width:25%;height:50px;background:#fff;text-align:center;line-height:50px;}
+        #header {width:100%;
+            position: relative;}
+        #header.sticky {
+            position: fixed;}
+        nav {width:100%;height:50px;overflow:hidden;
+            position: relative;}
+        nav li {float:left;width:25%;height:50px;background:#fff;text-align:center;line-height:50px;
+            position: relative;}
         nav li a {width:100%;text-decoration: none;color:#000;display:inline-block;}
-        nav li.on {color:red;}
+        nav li a.on {color:red;}
         .section {width:100%;height:500px;}
         #section01 {background:red;}
+        nav li span {color:#000;
+            position: absolute;top:0;left:0;}
         #section02 {background:black;}
         #section03 {background:blue;}
         #section04 {background:violet;}
+
+        #rules {width:100%;height:150px;background-color:#fff;overflow-y:auto;}
     </style>
 </head>
 <body>
-    <div id="warp">
-        <section class="header">
+    <div id="wrap">
+        <section id="header">
             <nav id="navi">
                 <li><a href="#section01" class="movelink">section 01</a></li>
                 <li><a href="#section02" class="movelink">section 02</a></li>
@@ -29,12 +39,8 @@
                 <li><a href="#section04" class="movelink">section 04</a></li>
             </nav>
         </section>
-        <section class="container">
-            <div class="section" id="section01">
-                <input type="checkbox" id="ch_01"><label for="ch_01">1</label>
-                <input type="checkbox" id="ch_02"><label for="ch_02">2</label>
-                <input type="checkbox" id="ch_03"><label for="ch_03">3</label>
-            </div>
+        <section id="container">
+            <div class="section" id="section01"></div>
             <div class="section" id="section02"></div>
             <div class="section" id="section03"></div>
             <div class="section" id="section04"></div>
@@ -44,14 +50,46 @@
         (function(){
             var $sectionArea = $(".section"),
                 sectionMax = $sectionArea.length,
-                heightSection = [];
+                heightSection = [],
+                $win = $(window),
+                $nav = $("#navi"),
+                items = $nav.find("a"),
+                $header = $("#header"),
+                $headeHeight = $header.outerHeight();
 
             for (var i=0;i < sectionMax;i++){
-                heightSection[i] = {
-                    "width" : $sectionArea.outerWidth(),
-                    "height" : $sectionArea.outerHeight()
-                };
+                heightSection.push($sectionArea.outerHeight());
             }
+
+            function headerFixed() {
+                var formTop = $(this).scrollTop()+$headeHeight,
+                    winT = $(window).scrollTop();
+                var cur = items.map(function () {
+                   if ($(this).offset().top < formTop) return this;
+                });
+                cur = cur[cur.length-1];
+                var id = cur && cur.length ? cur[0].id : "";
+                console.log(id);
+
+                if(winT > 30){
+                    $header.addClass("sticky");
+                }else{
+                    $header.removeClass("sticky");
+                }
+            }
+
+
+            $win.on("scroll",function(){
+                headerFixed();
+                checkReading();
+            });
+
+
+            function checkReading() {
+                checkReading.read = $(window).scrollTop() + window.innerHeight === $(document).height();
+            }
+
+
 
         }());
 

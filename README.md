@@ -15,7 +15,8 @@
 - [gomugom] (https://gomugom.github.io/) - 개발자사이트
 - [quirksmode] (http://quirksmode.org/dom/core/) - 자바스크립트 사이트 caniuse와 비슷
 - [Native JavaScript Equivalents of jQuery Methods: CSS and Animation] (https://www.sitepoint.com/jquery-vs-raw-javascript-2-css3-animation/)
-
+- [clean-code-javascript] (https://github.com/ryanmcdermott/clean-code-javascript/blob/master/README.md)
+- [googlejavascirptstyleguide] (https://google.github.io/styleguide/javascriptguide.xml)
 
 ## **Git 공부하기**
 - 모르는 용어
