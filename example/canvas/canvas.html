@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="container">
+        <div class="canvas-wrap">
+            <canvas id="canvas" width="600" height="250"></canvas>
+            <span class="procent" data-percent="10"></span>
+            <span class="procent" data-percent="100"></span>
+            <span class="procent" data-percent="80"></span>
+        </div>
+    </div>
+    <script src="/2017_list/lib/jquery/jquery.min.js">
+
+    </script>
+    <script>
+        (function() {
+            if(!Date.now){
+                Date.now = function(){
+                    return +new Date;
+                };
+            }
+            if(!window['performance']) window.performance = {};
+            if(!performance.now) performance.now = (function(){
+                var offset = Date.now(); //브라우저의 실행시점을 기억한다.
+                return function(){
+                    return Date.now() - offset; //경과시간을 반환한다.
+                };
+            })();
+            if(!window['requestAnimationFrame']){
+                window.requestAnimationFrame = window['webkitRequestAnimationFrame']
+                    || window['mozRequestAnimationFrame']
+                    || window['msRequestAnimationFrame']
+                    || function(func) {
+                        if(!func.__raf__){
+                            func.__raf__ = function(){
+                                func(performance.now());
+                            };
+                        }
+                        return setTimeout(func.__raf__, 1000 / 100);
+                    };
+                window.cancelAnimationFrame = window['webkitCancelAnimationFrame']
+                    || window['mozCancelAnimationFrame']
+                    || window['msCancelAnimationFrame']
+                    || clearTimeout;
+            }
+
+            var can = document.getElementById("canvas"),
+                c = can.getContext('2d');
+            var posX = can.width / 2,
+                posY = can.height / 2,
+                rad = Math.PI/180,
+                arc_index = 0,
+                arc_last_index = $(".procent").length - 1,
+                val = $(".procent").eq(0).data("percent"),
+                lineColor = ["red","blue","black"];
+
+            var deegres = 0;
+            function countUp() {
+                if(arc_index > arc_last_index) {
+                    return;
+                } else {
+                    val = $(".procent").eq(arc_index).data("percent");
+                    requestAnimationFrame(function () {
+                        arcMove(arc_index, val);
+                    });
+                    deegres = 0;
+                    arc_index++;
+                }
+            }
+            var imageData;
+            function arcMove(arc_index, value){
+
+                var radius = arc_index * 20 + 50;
+                var result = value * (360/100);
+                console.log("imageData",imageData)
+                c.clearRect(0,0,can.width,can.height);
+                if(imageData){
+                    c.putImageData(imageData, 0, 0);
+                }
+                c.beginPath();
+                c.strokeStyle = lineColor[arc_index-1];
+                c.lineWidth = '12';
+                c.arc(posX,posY,radius, rad * 270, rad * (270 + deegres));
+                c.stroke();
+
+                deegres++;
+                if(deegres > result){
+                    imageData = c.getImageData(0,0,can.width, can.height);
+                    arc_index++;
+                    countUp();
+                } else {
+                    requestAnimationFrame(function () {
+                        arcMove(arc_index, value);
+                    });
+                }
+            }
+            countUp();
+        })();
+    </script>
+</body>
+</html>
