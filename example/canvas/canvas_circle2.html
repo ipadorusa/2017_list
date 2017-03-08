@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="container">
+        <div class="circle_warp">
+            <canvas id="circle" width="300" height="300"></canvas>
+            <span class="data" data-percent="70.5" data-color="#ff0000"></span>
+            <span class="data" data-percent="53.7" data-color="#02ff00"></span>
+            <span class="data" data-percent="63" data-color="#0000ff"></span>
+        </div>
+    </div>
+
+    <script src="/2017_list/lib/jquery/jquery.min.js"></script>
+    <script>
+        (function() {
+            var requestAnimationFrame = window.requestAnimationFrame ||
+                window.mozRequestAnimationFrame ||
+                window.webkitRequestAnimationFrame ||
+                window.msRequestAnimationFrame;
+            window.requestAnimationFrame = requestAnimationFrame;
+        })();
+
+        var canvas = document.getElementById('circle'),
+            context = canvas.getContext('2d'),
+            x = canvas.width / 2,
+            y = canvas.height / 2,
+            radius = x / 2,
+            endPercent = [],
+            curPerc = [],
+            colorAry = [],
+            circ = Math.PI * 2,
+            quart = Math.PI / 2,
+            inertia = 0.9,
+            lineWidth = 20;
+
+        $('.circle_warp span').each(function() {
+            endPercent.push(parseInt($(this).data("percent"),10));
+            colorAry.push($(this).data("color"));
+            curPerc.push(0);
+        });
+
+        context.lineWidth = lineWidth;
+
+        function drawArc(radius, percent, color) {
+            context.beginPath();
+            context.strokeStyle = color;
+            context.arc(x, y, radius, -(quart), ((circ) * percent / 100) - quart);
+            context.stroke();
+        }
+
+        function animate(current, objPercent) {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            var _stop = true;
+            for (var i = 0; i < endPercent.length; i++) {
+                curPerc[i] = getInertia(curPerc[i], endPercent[i]);
+                drawArc(50 + i * (lineWidth + 5), curPerc[i], colorAry[i]);
+                console.log(lineWidth)
+                if (curPerc[i] != endPercent[i]) {
+                    _stop = false;
+                }
+            }
+            if (!_stop) {
+                requestAnimationFrame(function() {
+                    animate(curPerc / 100);
+                });
+            }
+        }
+
+        function getInertia(_curr, _end) {
+            if (_end - _curr < 0.01) {
+                return _end;
+            }
+            return inertia * _curr + (1 - inertia) * _end;
+        }
+
+        animate();
+    </script>
+</body>
+</html>
