@@ -28,7 +28,6 @@
             context = canvas.getContext('2d'),
             x = canvas.width / 2,
             y = canvas.height / 2,
-            radius = x / 2,
             endPercent = [],
             curPerc = [],
             colorAry = [],
@@ -37,6 +36,7 @@
             inertia = 0.9,
             lineWidth = 20,
             circleGap = 5;
+
 
         $('.circle_warp span').each(function() {
             endPercent.push(parseInt($(this).data("percent"),10));
@@ -58,7 +58,7 @@
             var _stop = true;
             for (var i = 0; i < endPercent.length; i++) {
                 curPerc[i] = getInertia(curPerc[i], endPercent[i]);
-                drawArc(50 + i * (lineWidth + circleGap), curPerc[i], colorAry[i]);
+                drawArc(20 + i * (lineWidth + circleGap), curPerc[i], colorAry[i]);
                 console.log(lineWidth)
                 if (curPerc[i] != endPercent[i]) {
                     _stop = false;
