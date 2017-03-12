@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .salary_cont {width:600px;border:1px solid #000;}
+        .box_salary .graph_info {width:100%;clear:both;overflow:hidden;}
+        .wrap_graph {width:120px;height:319px;float:left;margin-left:50px;}
+        .graph {height:300px;
+            position: relative;}
+        .inner_graph {
+            position: absolute;bottom:0;}
+        .graph.recent .inner_graph {background:red;}
+        .graph.low .inner_graph{background:blue;}
+        .graph.high .inner_graph {background:cadetblue;}
+
+    </style>
+</head>
+<body>
+<div class="salary_cont">
+    <div class="salary recent_salary" data-offset="0">
+        <div class="box_salary">
+            <div class="graph_info">
+                <div class="wrap_graph">
+                    <em class="tit_graph">2016</em>
+                    <div class="graph recent">
+                        <div class="inner_graph" data-graph="63.33%">
+                            <span class="txt_g">6,330</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap_graph">
+                    <em class="tit_graph">최저</em>
+                    <div class="graph low">
+                        <div class="inner_graph" data-graph="42%">
+                            <span class="txt_g">4,200</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap_graph">
+                    <em class="tit_graph">최고</em>
+                    <div class="graph high">
+                        <div class="inner_graph" data-graph="81%">
+                            <span class="txt_g">8,100</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box_salary">
+            <div class="graph_info">
+                <div class="wrap_graph">
+                    <em class="tit_graph">2016</em>
+                    <div class="graph recent">
+                        <div class="inner_graph" data-graph="63.33%">
+                            <span class="txt_g">6,330</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap_graph">
+                    <em class="tit_graph">최저</em>
+                    <div class="graph low">
+                        <div class="inner_graph" data-graph="42%">
+                            <span class="txt_g">4,200</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap_graph">
+                    <em class="tit_graph">최고</em>
+                    <div class="graph high">
+                        <div class="inner_graph" data-graph="81%">
+                            <span class="txt_g">8,100</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/2017_list/lib/jquery/jquery.js"></script>
+<script>
+    (function() {
+        $.fn.gg = function(){
+            return this.each(function(){
+                var _this = $(this);
+                var _vertical = _this.find(".inner_graph");
+                var maxlength = _vertical.length;
+                var index=0;
+
+                
+                for(var i=0;i<maxlength;i++){
+                    _vertical.eq(index).animate({
+                        "height" : _vertical.eq(index).data("graph")
+                    },5000);
+                    index++;
+                    console.log(index);
+                }
+            });
+        };
+        $(".box_salary").gg();
+    }())
+</script>
+</body>
+</html>
