@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {margin:0;padding:0;}
+        table {width:100%;table-layout:fixed;}
+        #wrap {width:300px;}
+    </style>
+</head>
+<body>
+<div id="wrap"></div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script>
+    var peopleArry = ["#B22222","#228B22","#FF00FF","#DAA520","#008000","#FF69B4","#4B0082","#E6E6FA","#ADD8E6","#90EE90"];
+
+    function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+        console.log(array);
+        return array;
+    }
+    shuffleArray(peopleArry);
+
+    var str ="";
+    str += "<table><tbody>"
+    str += "<tr>"
+    for(var i=0;i<peopleArry.length;i++){
+        str += "<td width='30px' height='30px' style='background:"+ peopleArry[i] + "'>"
+        str += "</td>"
+    }
+    str += "</tr>"
+    str += "</tbody></table>"
+    $("#wrap").html(str);
+</script>
+</body>
+</html>
