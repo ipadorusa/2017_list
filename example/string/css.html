@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,
+        body
+        {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: none;
+            font-family: tahoma, verdana, arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        body
+        {
+            display: flex;
+        }
+        H1
+        {
+            margin: 0 0 16px;
+        }
+        H2
+        {
+            font-weight: normal;
+            margin: 0;
+            padding: 9px 8px 10px;
+        }
+        #source-block
+        {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 8px;
+            line-height: 1;
+        }
+        #source-wrapper
+        {
+            flex: 1;
+            overflow: hidden;
+        }
+        #source
+        {
+            width: 100%;
+            height: 100%;
+            resize: none;
+            margin: 0;
+            padding: 4px;
+            box-sizing: border-box;
+            font-family: Consolas, Courier New, monospace;
+            font-size: 13px;
+            outline: none;
+            border: 1px solid #DDD;
+        }
+        #result-block
+        {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+        #intro
+        {
+            font-size: 30px;
+            text-align: center;
+            padding: 50px;
+            color: #888;
+        }
+        #result
+        {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        #result.error
+        {
+            color: #D00;
+        }
+        #result-output
+        {
+            flex: 1;
+            overflow: auto;
+            white-space: pre;
+            font-family: Consolas, Courier New, monospace;
+            font-size: 13px;
+            padding: 8px;
+            border: 1px solid #DDD;
+            margin: 0 8px 8px 0;
+        }
+        #result-output > :first-child
+        {
+            margin-bottom: 10px;
+        }
+        .warn
+        {
+            padding: 4px;
+            overflow: hidden;
+            overflow-x: auto;
+            padding-bottom: .5em;
+            margin-bottom: .5em;
+        }
+        .warn-type
+        {
+            color: #A66;
+            border-bottom: 2px solid #FCC;
+            font-family: Arial;
+            display: inline-block;
+            margin-bottom: 4px;
+            line-height: 1;
+        }
+        .link-to-source
+        {
+            color: #09D;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .link-to-source:hover
+        {
+            color: #A00;
+        }
+        #result_output{
+            width: 100%;
+            height: 100%;
+            resize: none;
+            margin: 0;
+            padding: 4px;
+            box-sizing: border-box;
+            font-family: Consolas, Courier New, monospace;
+            font-size: 13px;
+            outline: none;
+            border: 1px solid #DDD;
+        }
+        #fill-issue
+        {
+            margin: 0px 8px 8px 0;
+            font-size: 110%;
+            border-left: 3px solid orange;
+            padding: 8px 12px;
+            background: #FED;
+        }
+        #well-done
+        {
+            margin: 0px 8px 8px 0;
+            font-size: 110%;
+            border-left: 3px solid #090;
+            padding: 8px 12px;
+            background: #EFD;
+        }
+    </style>
+</head>
+<body>
+<div id="source-block">
+    <h1>CSS <button type="button" id="btn_check">변환</button></h1>
+    <div id="source-wrapper">
+        <textarea id="source" placeholder="insert your CSS here"></textarea>
+    </div>
+</div>
+<div id="result-block">
+    <div id="intro" style="display: none;">
+        Show me your CSS and I'll tell you what I know about it 😎
+    </div>
+    <div id="result">
+        <h2 id="result-header">OK, that's what I know about your CSS:</h2>
+        <div id="result_output">
+
+        </div>
+    </div>
+    <div id="fill-issue" style="display: none">
+        I found some problems with your CSS. It might be because <a href="syntax.html" target="_blank">my knowledge about CSS syntax</a> is wrong or incomplete. In this case, please <a href="https://github.com/csstree/csstree/issues/new" target="_blank">fill an issue</a>.<br>
+        Thank you!
+    </div>
+    <div id="well-done">
+        No problems found. Your CSS looks valid. Well done!
+    </div>
+</div>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+    (function() {
+        $.fn.checkCss = function(){
+            var $source = $("#source");
+            var $btn_check = $("#btn_check");
+            var $result_output = $("#result_output");
+            $btn_check.on("click",function(){
+                $result_output.text($source.val().trim());
+            });
+        };
+        $("#source-wrapper").checkCss();
+    })();
+</script>
+</body>
+</html>
