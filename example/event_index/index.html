@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>클릭시 이전 현재 index 구하기</title>
+    <script src="../../lib/jquery/jquery.js"></script>  
+</head>
+<body>
+    <ul class="slide">
+        <li>
+            <div><img src="https://dummyimage.com/600x400/000/fff&text=1" alt=""></div>
+        </li>
+        <li>
+            <div><img src="https://dummyimage.com/600x400/000/fff&text=2" alt=""></div>
+        </li>
+        <li>
+            <div><img src="https://dummyimage.com/600x400/000/fff&text=3" alt=""></div>
+        </li>
+        <li>
+            <div><img src="https://dummyimage.com/600x400/000/fff&text=4" alt=""></div>
+        </li>
+        <li>
+            <div><img src="https://dummyimage.com/600x400/000/fff&text=5" alt=""></div>
+        </li>
+    </ul>
+    <div id="result">
+        이전값<span class="prev"></span><br />
+        현재값<span class="current"></span>
+    </div>
+    <script>
+        var idx = [];
+        var $slide = $(".slide");
+        var $obj = $slide.find("li div");
+        $obj.on("click",function(){
+            var index = $(this).parent().index();
+            idx.push(index);
+            $("#result .prev").text(
+                idx[(idx.length-2 > -1 ? idx.length-2 : idx.length-1)]
+            );
+            $("#result .current").text([
+                idx[idx.length-1]
+            ]);
+
+        });
+    </script>
+</body>
+</html>
