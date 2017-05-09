@@ -1,4 +1,4 @@
-# IPADORUSA GUIDE :ghost:
+# IPADORUSA GUIDE :kr: :art: :ghost:
 
 
 ## CSS
@@ -42,7 +42,8 @@
 - vue.js
 - Angular
 
-### [http://d2.naver.com/helloworld/4966453](http://d2.naver.com/helloworld/4966453)
+## 적용 가이드(실행가이드)
+> [http://d2.naver.com/helloworld/4966453](http://d2.naver.com/helloworld/4966453)
 - Flux,Redux
 - Babel
 - webpack
