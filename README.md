@@ -12,11 +12,10 @@
 ## Javascript
 > 기초 다시 시작후 진행?
 > ECMAScript2015 와 차이점을 알아야 하기에 해당 부분 다시 공부
-
-## ECMAScript 2015
 > 다른 사람들은 어떤식으로 공부
-- 스터디 [http://d2.naver.com/news/5743505](http://d2.naver.com/news/5743505)
-- [http://d2.naver.com/news/3552619](http://d2.naver.com/news/3552619)
+- ECMAScript 2015
+    - 스터디 [http://d2.naver.com/news/5743505](http://d2.naver.com/news/5743505)
+    - [http://d2.naver.com/news/3552619](http://d2.naver.com/news/3552619)
 
 ## Package Manager
 > npm 이 대세
