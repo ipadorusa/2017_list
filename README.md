@@ -32,7 +32,7 @@
 
 ## GIT
 > PHPSTORM 에서 사용법
-- 웹스톰에서 git [http://wit.nts-corp.com/2017/04/12/4399 ](http://wit.nts-corp.com/2017/04/12/4399)
+- 웹스톰에서 git [참고 URL](http://wit.nts-corp.com/2017/04/12/4399)
     - 브랜치작업
     - 충돌 메뉴얼
 ## Framework
@@ -42,7 +42,7 @@
 - Angular
 
 ## 적용 가이드(실행가이드)
-> [http://d2.naver.com/helloworld/4966453](http://d2.naver.com/helloworld/4966453)
+> [참고 URL](http://d2.naver.com/helloworld/4966453)
 - Flux,Redux
 - Babel
 - webpack
@@ -53,4 +53,6 @@
 > 만들면서 vue나 js에 대해서 공부하면서 진행하고 싶다.
 - [ ] 메모장앱
 - [ ] 투표앱 설문
-- [ ] 개인 블로그 or 신기술을 이용한 블로그
+- [ ] 개인 블로그 or 신기술을 이용한 블로그 [참고 URL](http://blog.saltfactory.net/)
+    - [ ] Jekyll
+    - [ ] Ghost
