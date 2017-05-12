@@ -9,40 +9,23 @@
 </head>
 <body>
     <ul class="slide">
-        <li>
-            <div><img src="https://dummyimage.com/600x400/000/fff&text=1" alt=""></div>
-        </li>
-        <li>
-            <div><img src="https://dummyimage.com/600x400/000/fff&text=2" alt=""></div>
-        </li>
-        <li>
-            <div><img src="https://dummyimage.com/600x400/000/fff&text=3" alt=""></div>
-        </li>
-        <li>
-            <div><img src="https://dummyimage.com/600x400/000/fff&text=4" alt=""></div>
-        </li>
-        <li>
-            <div><img src="https://dummyimage.com/600x400/000/fff&text=5" alt=""></div>
-        </li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
     </ul>
-    <div id="result">
-        이전값<span class="prev"></span><br />
-        현재값<span class="current"></span>
-    </div>
+    <div id="result"></div>
     <script>
-        var idx = [];
-        var $slide = $(".slide");
-        var $obj = $slide.find("li div");
-        $obj.on("click",function(){
-            var index = $(this).parent().index();
-            idx.push(index);
-            $("#result .prev").text(
-                idx[(idx.length-2 > -1 ? idx.length-2 : idx.length-1)]
+        var preindex = "없음";
+        var $btn = $("li");
+
+        $btn.on("click",function(){
+            var index = $(this).index();
+            $("#result").html(
+                "이전 " + preindex + "\n\n\n\n" + "현재" + index
             );
-            $("#result .current").text([
-                idx[idx.length-1]
-            ]);
-            console.log(idx);
+            preindex = index;
         });
     </script>
 </body>
