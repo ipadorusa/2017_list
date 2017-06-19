@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="//www.saraminimage.co.kr/js/libs/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="//www.saraminimage.co.kr/js/libs/swiper.jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+    <style>
+        @keyframes bounceInUp {
+            from, 60%, 75%, 90%, to {
+                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }
+
+            from {
+                opacity: 0;
+                transform: translate3d(0, 3000px, 0);
+            }
+
+            60% {
+                opacity: 0;
+                transform: translate3d(0, -20px, 0);
+            }
+
+            75% {
+                transform: translate3d(0, 10px, 0);
+            }
+
+            90% {
+                opacity: 0.7;
+                transform: translate3d(0, -5px, 0);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        .bounceInUp {
+            animation-name: bounceInUp;
+        }
+    </style>
+</head>
+<body>
+<script>
+    $(document).ready(function(){
+        // Check every 200ms the scroll position
+        $(document).on('scroll', _.throttle(function(){
+            check_if_needs_more_content();
+        }, 300));
+        function randomColor() {
+            var hex = Math.floor(Math.random() * 0xFFFFFF);
+            return "#" + ("000000" + hex.toString(16)).substr(-6);
+        }
+        function addElement() {
+            var newSection = document.createElement("div");
+            var appendContent = document.getElementById('content');
+            newSection.className = 'addsection';
+            newSection.style.backgroundColor = randomColor();
+            appendContent.appendChild(newSection);
+        }
+        function check_if_needs_more_content() {
+            pixelsFromWindowBottomToBottom = 0 + $(document).height() - $(window).scrollTop() -$(window).height();
+            if (pixelsFromWindowBottomToBottom < 100){
+                addElement();
+            }
+        }
+    });
+</script>
+</body>
+</html>
